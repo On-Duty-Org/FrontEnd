@@ -1,4 +1,4 @@
-# Translate alphabet based text to braille.
+
 from googletrans import Translator
 from flask import Flask,request,jsonify
 from languages import supported_languages
