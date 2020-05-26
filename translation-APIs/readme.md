@@ -1,4 +1,4 @@
-# Braille-Translator 
+# Language Translator
 ### API Endpoints
 ```
 Request
