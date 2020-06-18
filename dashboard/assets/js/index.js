@@ -36,7 +36,7 @@ fetch("http://aman28.pythonanywhere.com/zone/").then(
         )
     }
 );
-// Police fetc
+// Police fetch
 fetch("http://aman28.pythonanywhere.com/allocation/").then(
     res=>{
         res.json().then(
@@ -48,6 +48,7 @@ fetch("http://aman28.pythonanywhere.com/allocation/").then(
                         temp += "<td>"+u.zone+"</td>";
                         temp += "<td>"+u.priority + "</td>";
                         temp += "<td>"+u.police_allotted + "</td>";
+                        u.date_posted = u.date_posted.replace('Z', ' ').replace('T', ' ');
                         temp += "<td>"+u.date_posted + "</td>";
                         temp += "<td>"+u.time_slot + "</td>";
                     });
