@@ -1,2 +1,1 @@
-# RESTful-Backend
-Contains the restful APIs for the app
+### Contains the beat allocation page UI/UX
