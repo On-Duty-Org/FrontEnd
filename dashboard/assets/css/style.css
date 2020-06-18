@@ -22,7 +22,25 @@ h1, h2, h3, h4, h5, h6,
   font-family: "Google Sans", sans-serif;
   font-weight: 700;
 }
-
+/* Making table scalable on phone */
+table, th, td {
+  border: 1px solid Black;}
+  
+  /* make the table a 100% wide by default */
+  table {
+  width: 100%;}
+  
+  /* if the browser window is at least 800px-s wide: */
+  @media screen and (min-width: 800px) {
+    table {
+    width: 90%;}
+  }
+  
+  /* if the browser window is at least 1000px-s wide: */
+  @media screen and (min-width: 1000px) {
+    table {
+    width: 80%;}
+  }
 h2{
   font-size: 25px
 }

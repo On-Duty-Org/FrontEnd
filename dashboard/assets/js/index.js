@@ -37,6 +37,7 @@ fetch("http://aman28.pythonanywhere.com/zone/").then(
     }
 );
 // Police fetch
+
 fetch("http://aman28.pythonanywhere.com/allocation/").then(
     res=>{
         res.json().then(
