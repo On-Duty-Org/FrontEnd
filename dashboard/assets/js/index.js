@@ -44,7 +44,7 @@ fetch("http://aman28.pythonanywhere.com/zone/").then(
     }
 );
 // Police fetch
-wait(100)
+wait(100) // prevent fetching this before police and zone fetch
 
 fetch("http://aman28.pythonanywhere.com/allocation/").then(
     res=>{
