@@ -1,3 +1,10 @@
+function wait(ms){
+    var start = new Date().getTime();
+    var end = start;
+    while(end < start + ms) {
+      end = new Date().getTime();
+   }
+ }
 // Police fetch
 fetch("http://aman28.pythonanywhere.com/police/").then(
     res=>{
@@ -37,6 +44,7 @@ fetch("http://aman28.pythonanywhere.com/zone/").then(
     }
 );
 // Police fetch
+wait(100)
 
 fetch("http://aman28.pythonanywhere.com/allocation/").then(
     res=>{
