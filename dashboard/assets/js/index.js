@@ -77,3 +77,4 @@ fetch("http://aman28.pythonanywhere.com/allocation/").then(
         )
     }
 );
+// wait(1000) 

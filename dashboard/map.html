@@ -10,6 +10,8 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="styles.css">
+
 
 <style>
 	body { margin: 0; padding: 0; }
@@ -27,62 +29,38 @@
 <body>
  
 <div id="map"></div>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">Onduty</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
+<nav class="navbar navbar-expand-lg navbar-light bg-light app-header header-shadow">
+  <a class="navbar-brand font-weight-bold text-secondary" href="index.html">Onduty</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link text-primary" href="map.html"><strong>Live Location</strong></a>
-      </li>    
-      <li class="nav-item active">
-        <a class="nav-link text-danger" href="fly.html"><strong>Alerts</strong></a>
-    </li> 
-    <li class="nav-item active">
-      <a class="nav-link text-secondary" href="journey.html"><strong>History</strong></a>
-    </li>         
+          <a class="nav-link text-primary" href="map.html"><i class="fas fa-map-marker-alt"></i><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp<strong>Track</strong></a>
+        </li>    
+        <li class="nav-item active">
+          <a class="nav-link text-danger" href="fly.html"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp<strong>Alerts</strong></a>
+        </li> 
+        <li class="nav-item active">
+          <a class="nav-link text-secondary" href="journey.html"><i class="fa fa-thumb-tack" aria-hidden="true"></i>&nbsp<strong>History</strong></a>
+        </li> 
       </ul>
-  <ul class = "navbar-nav ml-auto">
-    <li class="nav-item active">
-      <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/police/">Police<span class="sr-only">(current)</span></a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/zone/">Zones</a>
-    </li>
-    <li class="nav-item active">
-        <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/admin">Admin Dashboard</a>
-    </li>&nbsp;
-
-  </ul>
-      <form class="form-inline my-2 my-lg-0">
-            <div id="google_translate_element"></div>
-      </form>
+      <ul class = "navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/police/"><i class="nav-link-icon fa fa-address-card-o">&nbsp</i>Police<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/zone/"><i class="nav-link-icon fa fa-search">&nbsp</i>Zones</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/admin"><i class="nav-link-icon fa fa-cog"></i>&nbspAdmin Dashboard</a>
+        </li>&nbsp;
+      </ul>
+      <br>
+      <div style = "margin-top: 29px;"id="google_translate_element"></div>
     </div>
-  </nav>
-<!-- <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiaXNoYW5rNDciLCJhIjoiY2tibm8xbHF3MTc1ZDJycW55Znh6YWppdSJ9.zCHaLlcI36pxVctNkFZ5Sg';
-    var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11',
-    zoom: 13,
-    center: [4.899, 52.372]
-    });
-     
-    var layerList = document.getElementById('menu');
-    var inputs = layerList.getElementsByTagName('input');
-     
-    function switchLayer(layer) {
-    var layerId = layer.target.id;
-    map.setStyle('mapbox://styles/mapbox/' + layerId);
-    }
-     
-    for (var i = 0; i < inputs.length; i++) {
-    inputs[i].onclick = switchLayer;
-    }
-</script> -->
+</nav>
 
 <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiaXNoYW5rNDciLCJhIjoiY2tibm8xbHF3MTc1ZDJycW55Znh6YWppdSJ9.zCHaLlcI36pxVctNkFZ5Sg';
@@ -127,6 +105,11 @@
     });
     });
 </script>
- 
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+</script>
 </body>
 </html>

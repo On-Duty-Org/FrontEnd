@@ -4,162 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+
 
     <title>Dashboard</title>
 </head>
 <body>
-     <div class = "container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="index.html">Onduty</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+  <div class = "container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light app-header header-shadow">
+          <a class="navbar-brand font-weight-bold text-secondary" href="index.html">Onduty</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link text-primary" href="map.html"><strong>Live Location</strong></a>
+                  <a class="nav-link text-primary" href="map.html"><i class="fas fa-map-marker-alt"></i><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp<strong>Track</strong></a>
                 </li>    
                 <li class="nav-item active">
-                  <a class="nav-link text-danger" href="fly.html"><strong>Alerts</strong></a>
+                  <a class="nav-link text-danger" href="fly.html"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp<strong>Alerts</strong></a>
                 </li> 
                 <li class="nav-item active">
-                  <a class="nav-link text-secondary" href="journey.html"><strong>History</strong></a>
+                  <a class="nav-link text-secondary" href="journey.html"><i class="fa fa-thumb-tack" aria-hidden="true"></i>&nbsp<strong>History</strong></a>
                 </li> 
               </ul>
               <ul class = "navbar-nav ml-auto">
                 <li class="nav-item active">
-                  <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/police/">Police<span class="sr-only">(current)</span></a>
+                  <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/police/"><i class="nav-link-icon fa fa-address-card-o">&nbsp</i>Police<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/zone/">Zones</a>
+                  <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/zone/"><i class="nav-link-icon fa fa-search">&nbsp</i>Zones</a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/admin">Admin Dashboard</a>
+                  <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/admin"><i class="nav-link-icon fa fa-cog"></i>&nbspAdmin Dashboard</a>
                 </li>&nbsp;
-
               </ul>
-              <form class="form-inline my-2 my-lg-0">
-                    <div id="google_translate_element"></div>
-              </form>
+              <br>
+              <div style = "margin-top: 29px;"id="google_translate_element"></div>
             </div>
-          </nav>
+        </nav>
+        
           <br>
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">On Duty</h5>
-                  <div class = "row">
-                      <div class = "col-sm-6">
-                        <img src="./assets/images/stakeout.png" alt="">
+          <div class = "container">
+            <div class="row">
+                <div class="col-sm-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">On Duty</h5>
+                      <div class = "row">
+                          <div class = "col-sm-6">
+                            <img src="./assets/images/stakeout.png" alt="">
+                          </div>
+                          <div class = "col-sm-6">
+                            <h4 class="widget-numbers text-success" id = "onduty-live">4 Active</h4>
+                          </div>
                       </div>
-                      <div class = "col-sm-6">
-                        <h3 id = "onduty-live">4 Active</h3>
-                      </div>
-                  </div>
-                  
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Zone Status</h5>
-                  <div class = "row">
-                      <div class = "col-sm-6">
-                        <img src="./assets/images/nearby.png" alt="">
-                      </div>
-                      <div class = "col-sm-6">
-                          <h3 id = "zone-alloted-live">5 Alloted</h3>
-                      </div>
-                  </div>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Unalloted Zones</h5>
-                    <div class = "row">
-                        <div class = "col-sm-6">
-                          <img src="./assets/images/toxic.png" alt="">
-                        </div>
-                        <div class = "col-sm-6">
-                            <h3 id = "zone-na-live">5 Alloted</h3>
-                        </div>
+                          <p class="card-text widget-subheading">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="mb-2 mr-2 btn-transition btn btn-outline-primary">Go somewhere</a>
                     </div>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional    content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
                   </div>
                 </div>
+              <div class="col-sm-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Zone Status</h5>
+                      <div class = "row">
+                          <div class = "col-sm-6">
+                            <img src="./assets/images/nearby.png" alt="">
+                          </div>
+                          <div class = "col-sm-6">
+                              <h4 class="widget-numbers text-primary" id = "zone-alloted-live">5 Allotted</h4>
+                          </div>
+                      </div>
+                      <p class="card-text widget-subheading">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="#" class="mb-2 mr-2 btn-transition btn btn-outline-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Unalloted Zones</h5>
+                        <div class = "row">
+                            <div class = "col-sm-6">
+                              <img src="./assets/images/toxic.png" alt="">
+                            </div>
+                            <div class = "col-sm-6">
+                                <h4 id = "zone-na-live" class="widget-numbers text-warning">5 Unalloted</h4>
+                            </div>
+                        </div>
+                        <p class="card-text widget-subheading">With supporting text below as a natural lead-in to additional    content.</p>
+                        <a href="#" class="mb-2 mr-2 btn-transition btn btn-outline-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                  </div>
               </div>
-          </div>
+              <div class="divider mt-0" style="margin-bottom: 30px;"></div>
+            </div>
+    
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="main-card mb-3 card">
+                <div class="card-body table-responsive">
+                  <h5 class="card-title">Active Police Info</h5>
+                    <table class="mb-0 table table-striped">
+                        <thead>
+                        <tr>
+                          <th>Allotment Id </th>
+                          <th>Alloted Zone</th>
+                          <th>Priority</th>
+                          <th>Police Alloted</th>
+                          <th>Time Posted</th>
+                          <th>Slot Alloted</th>
+                        </tr>
+                        </thead>
+                        <tbody id = "allocation">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-        <br>
-        <hr style="width: 70%; background-color: #2E2B26; border-color: #2E2B26;">
-        <div class="container">
-            <div class="row">
-                <div class="table-responsive">
-                    <h3>Active Police Info</h3>
-                    <table class = "table table-striped">
-                        <thead class = "thead-dark">
-                            <tr>
-                                <th>Allotment Id </th>
-                                <th>Alloted Zone</th>
-                                <th>Priority</th>
-                                <th>Police Alloted</th>
-                                <th>Time Posted</th>
-                                <th>Slot Alloted</th>
-                            </tr>
-                        </thead>
-                        <tbody id = "allocation" >
-                            
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <h3>Zones</h3>
-                    <table class = "table table-striped">
-                        <thead class = "thead-dark">
-                            <tr>
-                                <th>Zone Id </th>
-                                <th>Zone Name</th>
-                                <th>Zone Priority</th>
-                            </tr>
-                        </thead>
-                        <tbody id = "zones" >
-                            
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-sm-6">
-                    <h3>Police </h3>
-                    <table class = "table table-striped">
-                        <thead class = "thead-dark">
-                            <tr>
-                                <th>Police Id </th>
-                                <th>Police Name</th>
-                                <th>Police Rank</th>
-                            </tr>
-                        </thead>
-                        <tbody id = "police" >
-                            
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-      </div>  
     </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                  <h5 class="card-title">Zones</h5>
+                    <table class="mb-0 table table-striped">
+                        <thead>
+                        <tr>
+                          <th>Zone Id </th>
+                          <th>Zone Name</th>
+                          <th>Zone Priority</th>
+                        </tr>
+                        </thead>
+                        <tbody id = "zones">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                  <h5 class="card-title">Police</h5>
+                    <table class="mb-0 table table-striped">
+                      <thead>
+                      <tr>
+                        <th>Police Id </th>
+                        <th>Police Name</th>
+                        <th>Police Rank</th>
+                      </tr>
+                      </thead>
+                      <tbody id = "police">
+
+                      </tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 <script src = "assets/js/index.js"></script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
