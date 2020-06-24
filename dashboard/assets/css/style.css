@@ -18,7 +18,7 @@ html, body {
   }
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  color: whitesmoke;
+  color: #272822;
   font-family: "Google Sans", sans-serif;
   font-weight: 700;
 }
@@ -73,7 +73,7 @@ button{
     border-radius: 3px;
     font-size: 12px;
     text-align: center;
-    color: #fff;
+    color: rgb(39, 29, 29);
     background: #ee8a65;
     
 }

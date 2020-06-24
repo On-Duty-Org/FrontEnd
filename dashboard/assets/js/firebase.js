@@ -13,7 +13,13 @@ function renderAlert(doc){
     document.getElementById(doc.id).addEventListener('click', function() {
         var marker = new mapboxgl.Marker()
         .setLngLat(doc.data().coordinates)
+        .addTo(map)
+
+        var popup = new mapboxgl.Popup({ closeOnClick: false })
+        .setLngLat(doc.data().coordinates)
+        .setHTML('<h5>'+doc.data().message+'</h5>')
         .addTo(map);
+
         map.flyTo({
         center: doc.data().coordinates,
         essential: true // this animation is considered essential with respect to prefers-reduced-motion
