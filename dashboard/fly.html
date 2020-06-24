@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Fly to a location</title>
+<title>Alerts</title>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
 <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
@@ -13,27 +13,10 @@
 <link rel="stylesheet" href="assets/css/style.css">
 
 <style>
-	body { margin: 0; padding: 0; }
 	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
 </style>
 </head>
 <body>
-<style>
-#fly {
-display: block;
-position: relative;
-margin: 0px auto;
-width: 50%;
-height: 40px;
-padding: 10px;
-border: none;
-border-radius: 3px;
-font-size: 12px;
-text-align: center;
-color: #fff;
-background: #ee8a65;
-}
-</style>
 
 <div id="map"></div>
 <div class="sidebar">
@@ -84,14 +67,13 @@ background: #ee8a65;
   </nav>
   <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
+    <h2 class = "font-weight-bold ">Alerts</h2>
+    <div class = "alerts">
+
+    </div>
   </div>
 
 <br />
-<button id="fly">ALERT</button>
 <script>
     function openNav() {
       document.getElementById("mySidebar").style.width = "250px";
@@ -103,9 +85,9 @@ background: #ee8a65;
       document.getElementById("main").style.marginLeft= "0";
     }
     </script>
-       
+<!--MAPBOX SETUP  -->
 <script>
-	mapboxgl.accessToken = 'pk.eyJ1IjoiaXNoYW5rNDciLCJhIjoiY2tibm8xbHF3MTc1ZDJycW55Znh6YWppdSJ9.zCHaLlcI36pxVctNkFZ5Sg';
+mapboxgl.accessToken = 'pk.eyJ1IjoiaXNoYW5rNDciLCJhIjoiY2tibm8xbHF3MTc1ZDJycW55Znh6YWppdSJ9.zCHaLlcI36pxVctNkFZ5Sg';
 var map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/mapbox/streets-v11',
@@ -113,18 +95,27 @@ center: [-74.5, 40],
 zoom: 9
 });
  
-document.getElementById('fly').addEventListener('click', function() {
-// Fly to a random location by offsetting the point -74.50, 40
-// by up to 5 degrees.
-map.flyTo({
-center: [
--74.5 + (Math.random() - 0.5) * 10,
-40 + (Math.random() - 0.5) * 10
-],
-essential: true // this animation is considered essential with respect to prefers-reduced-motion
-});
-});
 </script>
- 
+<!-- FIREBASE SETUP -->
+<script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-analytics.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyD2JGKBeSgG3OshB1JmvB1Yfj0nmdvInf0",
+    authDomain: "linen-rex-236017.firebaseapp.com",
+    databaseURL: "https://linen-rex-236017.firebaseio.com",
+    projectId: "linen-rex-236017",
+    storageBucket: "linen-rex-236017.appspot.com",
+    messagingSenderId: "328654520076",
+    appId: "1:328654520076:web:54b1139e5d80474a661329",
+    measurementId: "G-WWKX9JW5N1"
+  };
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  var db = firebase.firestore();
+</script>
+<script src = "assets/js/firebase.js"></script>
 </body>
 </html>
