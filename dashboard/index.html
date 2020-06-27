@@ -48,10 +48,8 @@
             </div>
         </nav>
         <!-- Marquee tag to be fetched from database later -->
-        <h5 class = 'font-weight-bold text-success'>Status</h5>
-        <marquee style = 'color:green'>5 police vehicles deployed in Mathikere, 4 Police patrol deployed near India Gate, 12 Police near Jamia Milia Islamia </marquee><br>
-        <h5 class = 'font-weight-bold text-danger'>Notifications</h5>
-        <marquee style = 'color:crimson'>1 critical zone not deployed for any police. 4 important alerts pending for the police response. 3 police groups not deployed anywhere  </marquee>
+        <h5 class = 'font-weight-bold text-danger'>Alert</h5>
+        <marquee style = 'color:crimson'>1 critical zone not alloted for any police. 4 important alerts pending for the police response. 3 police groups not deployed anywhere  </marquee>
         <br>
         <!-- End of Marquee tags -->
           <div class = "container">
@@ -65,11 +63,11 @@
                             <img src="./assets/images/stakeout.png" alt="">
                           </div>
                           <div class = "col-sm-6">
-                            <h4 class="widget-numbers text-success" id = "onduty-live">4 Active</h4>
+                            <h4 class="widget-numbers text-success" id = "onduty-live">4 Deployed</h4>
                           </div>
                       </div>
-                          <p class="card-text widget-subheading">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="mb-2 mr-2 btn-transition btn btn-outline-primary">Go somewhere</a>
+                          <p class="card-text widget-subheading">List of police groups successfully alloted to their respective zones.</p>
+                        <a href="#" class="mb-2 mr-2 btn-transition btn btn-outline-primary">Details</a>
                     </div>
                   </div>
                 </div>
@@ -85,8 +83,8 @@
                               <h4 class="widget-numbers text-primary" id = "zone-alloted-live">5 Allotted</h4>
                           </div>
                       </div>
-                      <p class="card-text widget-subheading">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="mb-2 mr-2 btn-transition btn btn-outline-primary">Go somewhere</a>
+                      <p class="card-text widget-subheading">List of zones where police have been deployed successfully</p>
+                      <a href="#" class="mb-2 mr-2 btn-transition btn btn-outline-primary">Details</a>
                     </div>
                   </div>
                 </div>
@@ -102,8 +100,8 @@
                                 <h4 id = "zone-na-live" class="widget-numbers text-warning">5 Unalloted</h4>
                             </div>
                         </div>
-                        <p class="card-text widget-subheading">With supporting text below as a natural lead-in to additional    content.</p>
-                        <a href="#" class="mb-2 mr-2 btn-transition btn btn-outline-primary">Go somewhere</a>
+                        <p class="card-text widget-subheading">List of zones not occupied for patrol by any police</p>
+                        <a href="#" class="mb-2 mr-2 btn-transition btn btn-outline-primary">Details</a>
                       </div>
                     </div>
                   </div>
@@ -126,6 +124,7 @@
                           <th>Police Alloted</th>
                           <th>Time Posted</th>
                           <th>Slot Alloted</th>
+                          <th>Change</th>
                         </tr>
                         </thead>
                         <tbody id = "allocation">

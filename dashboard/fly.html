@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/index.css">
 
 <style>
 	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -60,9 +61,7 @@
 					<a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/admin"><i class="nav-link-icon fa fa-cog"></i>&nbspAdmin Dashboard</a>
 				</li>&nbsp;
 			</ul>
-      <form class="form-inline my-2 my-lg-0">
-            <div id="google_translate_element"></div>
-      </form>
+      <div style = "margin-top: 27px;"id="google_translate_element"></div>
     </div>
   </nav>
 
@@ -81,8 +80,8 @@
 <br />
 <script>
     function openNav() {
-      document.getElementById("mySidebar").style.width = "250px";
-      document.getElementById("main").style.marginLeft = "250px";
+      document.getElementById("mySidebar").style.width = "350px";
+      document.getElementById("main").style.marginLeft = "350px";
     }
 
     function closeNav() {
@@ -125,5 +124,11 @@ zoom: 9
 <!-- FOR COLLAPSABLE ALERTS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  }
+</script>
 </body>
 </html>
