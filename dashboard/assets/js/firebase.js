@@ -15,7 +15,6 @@ function renderAlert(doc){
     let message = document.createElement('button');
     message.innerHTML = 'Alert: '+ doc.data().message;
     setAttributes(message, {'class' : 'alertMessage mb-2 mr-2 dropdown-toggle btn btn-danger', 'data-toggle' : 'dropdown'});
-
     let menu = document.createElement('div');
     setAttributes(menu, {'class' : 'dropdown-menu', 'tabIndex' : -1})
 
@@ -26,11 +25,11 @@ function renderAlert(doc){
 //Round off the coordinates to 3 decimal places
     // doc.data().coordinates[0] = Number(parseFloat(doc.data().coordinates[0]).toFixed(3));
     // doc.data().coordinates[1] = Number(parseFloat(doc.data().coordinates[1]).toFixed(3));
-    coordinates.innerHTML ='<strong>Coordinates</strong>: '+ doc.data().coordinates;
+    coordinates.innerHTML ='<strong>Coordinates</strong>: '+ doc.data().coordinates.latitude + ' ' + doc.data().coordinates.longitude;
     setAttributes(coordinates, {'class' : 'dropdown-item', 'tabIndex' : 0});
 
     let time = document.createElement('li');
-    time.innerHTML = '<strong>Time: </strong>: '+doc.data().datePosted;
+    time.innerHTML = '<strong>Time: </strong>: '+doc.data().time;
     setAttributes(time, {'class' : 'dropdown-item', 'tabIndex' : 0});
 
     let uniqueId = document.createElement('li');
@@ -58,25 +57,29 @@ function renderAlert(doc){
     alertList.appendChild(li);
 
 // event listener added to alert button
-    mapAlert = 'id:'+doc.id+'<br>name :'+doc.data().name+'<br>message :'+doc.data().message+'<br>Time:'+doc.data().datePosted;
+    mapAlert = 'id:'+doc.id+'<br>name :'+doc.data().name+'<br>message :'+doc.data().message+'<br>Time:'+doc.data().time;
+    var location = []
+    location.push(doc.data().coordinates.longitude); 
+    location.push(doc.data().coordinates.latitude);
     locateOnMap.addEventListener('click', function() {
         var marker = new mapboxgl.Marker()
-        .setLngLat(doc.data().coordinates)
+        .setLngLat(location)
         .addTo(map);
         
         var popup = new mapboxgl.Popup({ closeOnClick: false })
-        .setLngLat(doc.data().coordinates)
+        .setLngLat(location)
         .setHTML(mapAlert)
         .addTo(map);
         map.flyTo({
-        center: doc.data().coordinates,
+        center: location,
         essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         });
 }
-
-var docRef = db.collection('alerts').get().then((snapshot) =>{
+console.log('HELLo')
+var docRef = db.collection('Alerts').get().then((snapshot) =>{
+    // console.log(snapshot.docs);
     snapshot.docs.forEach(doc=>{
-        renderAlert(doc)
+        renderAlert(doc);
     })
 });
