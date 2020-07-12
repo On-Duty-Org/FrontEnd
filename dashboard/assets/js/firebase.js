@@ -13,7 +13,7 @@ function renderAlert(doc){
     setAttributes(li, {'class' : 'list-group-item dropdown', 'id' : doc.id});
 
     let message = document.createElement('button');
-    message.innerHTML = 'Alert: '+ doc.data().message;
+    message.innerHTML = 'Alert: '+ doc.data().alert;
     setAttributes(message, {'class' : 'alertMessage mb-2 mr-2 dropdown-toggle btn btn-danger', 'data-toggle' : 'dropdown'});
     let menu = document.createElement('div');
     setAttributes(menu, {'class' : 'dropdown-menu', 'tabIndex' : -1})
@@ -25,11 +25,11 @@ function renderAlert(doc){
 //Round off the coordinates to 3 decimal places
     // doc.data().coordinates[0] = Number(parseFloat(doc.data().coordinates[0]).toFixed(3));
     // doc.data().coordinates[1] = Number(parseFloat(doc.data().coordinates[1]).toFixed(3));
-    coordinates.innerHTML ='<strong>Coordinates</strong>: '+ doc.data().coordinates.latitude + ' ' + doc.data().coordinates.longitude;
+    coordinates.innerHTML ='<strong>Coordinates</strong>: '+ doc.data().location.latitude + ' ' + doc.data().location.longitude;
     setAttributes(coordinates, {'class' : 'dropdown-item', 'tabIndex' : 0});
 
     let time = document.createElement('li');
-    time.innerHTML = '<strong>Time: </strong>: '+doc.data().time;
+    time.innerHTML = '<strong>Time: </strong>: '+doc.data().timeStamp;
     setAttributes(time, {'class' : 'dropdown-item', 'tabIndex' : 0});
 
     let uniqueId = document.createElement('li');
@@ -37,7 +37,7 @@ function renderAlert(doc){
     setAttributes(uniqueId, {'class' : 'dropdown-item', 'tabIndex' : 0});
 
     let nameOfSender = document.createElement('li');
-    nameOfSender.innerHTML ='<strong>Name : </strong>'+ doc.data().name;
+    nameOfSender.innerHTML ='<strong>Name : </strong>'+ doc.data().sender;
     setAttributes(nameOfSender, {'class' : 'dropdown-item', 'tabIndex' : 0});
 
     let locateOnMap = document.createElement('li');
@@ -57,10 +57,10 @@ function renderAlert(doc){
     alertList.appendChild(li);
 
 // event listener added to alert button
-    mapAlert = 'id:'+doc.id+'<br>name :'+doc.data().name+'<br>message :'+doc.data().message+'<br>Time:'+doc.data().time;
+    mapAlert = 'id:'+doc.id+'<br>name :'+doc.data().sender+'<br>message :'+doc.data().alert+'<br>Time:'+doc.data().timeStamp;
     var location = []
-    location.push(doc.data().coordinates.longitude); 
-    location.push(doc.data().coordinates.latitude);
+    location.push(doc.data().location.longitude); 
+    location.push(doc.data().location.latitude);
     locateOnMap.addEventListener('click', function() {
         var marker = new mapboxgl.Marker()
         .setLngLat(location)
@@ -76,9 +76,8 @@ function renderAlert(doc){
         });
         });
 }
-console.log('HELLo')
-var docRef = db.collection('Alerts').get().then((snapshot) =>{
-    // console.log(snapshot.docs);
+var docRef = db.collection('Emergency Mode').get().then((snapshot) =>{
+
     snapshot.docs.forEach(doc=>{
         renderAlert(doc);
     })
