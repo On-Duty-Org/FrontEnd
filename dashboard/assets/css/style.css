@@ -114,3 +114,10 @@ p{
 li{
   cursor: pointer;
 }
+.mapboxgl-ctrl-top-right .mapboxgl-ctrl {
+  margin: 10px 10px 0 0;
+  float: right;
+  position: relative;
+  top: 30px;
+  right: 20px;
+}

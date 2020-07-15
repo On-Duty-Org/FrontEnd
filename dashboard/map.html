@@ -1,110 +1,137 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8" />
-<title>Add live realtime data</title>
-<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-<script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
-<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <title>Add live realtime data</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
 
 
-<style>
-	body { margin: 0; padding: 0; }
-	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
-
-    #menu {
-    position: absolute;
-    background: #fff;
-    padding: 10px;
-    font-family: 'Open Sans', sans-serif;
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
     }
 
-</style>
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    #menu {
+      position: absolute;
+      background: #fff;
+      padding: 10px;
+      font-family: 'Open Sans', sans-serif;
+    }
+  </style>
 </head>
+
 <body>
- 
-<div id="map"></div>
-<nav class="navbar navbar-expand-lg navbar-light bg-light app-header header-shadow">
-  <a class="navbar-brand font-weight-bold text-secondary" href="index.html">Onduty</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+
+  <div id="map"></div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light app-header header-shadow">
+    <a class="navbar-brand font-weight-bold text-secondary" href="index.html">Onduty</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link text-primary" href="map.html"><i class="fas fa-map-marker-alt"></i><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp<strong>Track</strong></a>
-        </li>    
+          <a class="nav-link text-primary" href="map.html"><i class="fas fa-map-marker-alt"></i><i
+              class="fa fa-map-marker" aria-hidden="true"></i>&nbsp<strong>Track</strong></a>
+        </li>
         <li class="nav-item active">
-          <a class="nav-link text-danger" href="fly.html"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp<strong>Alerts</strong></a>
-        </li> 
+          <a class="nav-link text-danger" href="fly.html"><i class="fa fa-exclamation-triangle"
+              aria-hidden="true"></i>&nbsp<strong>Alerts</strong></a>
+        </li>
         <li class="nav-item active">
-          <a class="nav-link text-secondary" href="journey.html"><i class="fa fa-thumb-tack" aria-hidden="true"></i>&nbsp<strong>History</strong></a>
-        </li> 
+          <a class="nav-link text-secondary" href="journey.html"><i class="fa fa-thumb-tack"
+              aria-hidden="true"></i>&nbsp<strong>History</strong></a>
+        </li>
       </ul>
-      <ul class = "navbar-nav ml-auto">
+      <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/police/"><i class="nav-link-icon fa fa-address-card-o">&nbsp</i>Police<span class="sr-only">(current)</span></a>
+          <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/police/"><i
+              class="nav-link-icon fa fa-address-card-o">&nbsp</i>Police<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/zone/"><i class="nav-link-icon fa fa-search">&nbsp</i>Zones</a>
+          <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/zone/"><i
+              class="nav-link-icon fa fa-search">&nbsp</i>Zones</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/admin"><i class="nav-link-icon fa fa-cog"></i>&nbspAdmin Dashboard</a>
+          <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/admin"><i
+              class="nav-link-icon fa fa-cog"></i>&nbspAdmin Dashboard</a>
         </li>&nbsp;
       </ul>
       <br>
-      <div style = "margin-top: 29px;"id="google_translate_element"></div>
+      <div style="margin-top: 29px;" id="google_translate_element"></div>
     </div>
-</nav>
+  </nav>
 
-<script>
+  <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiaXNoYW5rNDciLCJhIjoiY2tibm8xbHF3MTc1ZDJycW55Znh6YWppdSJ9.zCHaLlcI36pxVctNkFZ5Sg';
     var map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/satellite-v9',
       zoom: 0
     });
-    
+
     var url = 'https://wanderdrone.appspot.com/';
-    map.on('load', function() {
+    map.on('load', function () {
       var request = new XMLHttpRequest();
-      window.setInterval(function() {
+      window.setInterval(function () {
         request.open('GET', url, true);
-        request.onload = function() {
+        request.onload = function () {
           if (this.status >= 200 && this.status < 400) {
             var json = JSON.parse(this.response);
-    
+
             map.getSource('drone').setData(json);
             map.flyTo({
-            center: json.geometry.coordinates,
-            speed: 1
+              center: json.geometry.coordinates,
+              speed: 1
             });
           }
         };
-      request.send();
+        request.send();
       }, 500);
-    
-    map.addSource('drone', { type: 'geojson', data: url });
-    map.addLayer({
-    'id': 'drone',
-    'type': 'symbol',
-    'source': 'drone',
-    'layout': {
-    'icon-image': 'rocket-15'
-    }
+
+      map.addSource('drone', { type: 'geojson', data: url });
+      map.addLayer({
+        'id': 'drone',
+        'type': 'symbol',
+        'source': 'drone',
+        'layout': {
+          'icon-image': 'rocket-15'
+        }
+      });
     });
-  });
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script type="text/javascript">
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <script type="text/javascript">
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
     }
-</script>
+  </script>
 </body>
+
 </html>
