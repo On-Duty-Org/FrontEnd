@@ -17,46 +17,28 @@
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./assets/css/index.css">
-
-
   <title>Dashboard</title>
 </head>
 
 <body>
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light app-header header-shadow">
-      <a class="navbar-brand font-weight-bold text-secondary" href="index.html">Onduty</a>
+      <a class="navbar-brand font-weight-bold text-secondary" href="index.html">
+        <img class="navbar-brand" src="./assets/images/logo.png" height="40" alt="">
+        Onduty</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link text-primary" href="map.html"><i class="fas fa-map-marker-alt"></i><i
-                class="fa fa-map-marker" aria-hidden="true"></i>&nbsp<strong>Track</strong></a>
-          </li>
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
             <a class="nav-link text-danger" href="fly.html"><i class="fa fa-exclamation-triangle"
                 aria-hidden="true"></i>&nbsp<strong>Alerts</strong></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link text-secondary" href="journey.html"><i class="fa fa-thumb-tack"
-                aria-hidden="true"></i>&nbsp<strong>History</strong></a>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/police/"><i
-                class="nav-link-icon fa fa-address-card-o">&nbsp</i>Police<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/zone/"><i
-                class="nav-link-icon fa fa-search">&nbsp</i>Zones</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/admin"><i
-                class="nav-link-icon fa fa-cog"></i>&nbspAdmin Dashboard</a>
+            <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/"><i
+                class="nav-link-icon fa fa-id-card-o"></i>&nbspAdmin Dashboard</a>
           </li>&nbsp;
         </ul>
         <br>
@@ -128,73 +110,27 @@
     </div>
 
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="main-card mb-3 card">
-            <div class="card-body table-responsive">
-              <h5 class="card-title">Active Police Info</h5>
-              <table class="mb-0 table table-striped">
-                <thead>
-                  <tr>
-                    <th>Allotment Id </th>
-                    <th>Alloted Zone</th>
-                    <th>Priority</th>
-                    <th>Police Alloted</th>
-                    <th>Time Posted</th>
-                    <th>Slot Alloted</th>
-                    <th>Change</th>
-                  </tr>
-                </thead>
-                <tbody id="allocation">
-
-                </tbody>
-              </table>
-            </div>
+      <div class="col-md-12">
+        <div class="main-card mb-3 card">
+          <div class="card-body table-responsive">
+            <h5 class="card-title">Active Police Info</h5>
+            <table class="mb-0 table table-striped">
+              <thead>
+                <tr>
+                  <th>Allotment Id </th>
+                  <th>Alloted Zone</th>
+                  <th>Police Alloted</th>
+                  <th>Time posted</th>
+                  <th>Slot Alloted</th>
+                </tr>
+              </thead>
+              <tbody id="allocation">
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="main-card mb-3 card">
-            <div class="card-body">
-              <h5 class="card-title">Zones</h5>
-              <table class="mb-0 table table-striped">
-                <thead>
-                  <tr>
-                    <th>Zone Id </th>
-                    <th>Zone Name</th>
-                    <th>Zone Priority</th>
-                  </tr>
-                </thead>
-                <tbody id="zones">
 
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="main-card mb-3 card">
-            <div class="card-body">
-              <h5 class="card-title">Police</h5>
-              <table class="mb-0 table table-striped">
-                <thead>
-                  <tr>
-                    <th>Police Id </th>
-                    <th>Police Name</th>
-                    <th>Police Rank</th>
-                  </tr>
-                </thead>
-                <tbody id="police">
-
-                </tbody>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 </body>
 <script src="assets/js/index.js"></script>
 <script type="text/javascript"

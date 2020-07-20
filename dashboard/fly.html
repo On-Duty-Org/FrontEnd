@@ -37,14 +37,11 @@
 
   <div id="map"></div>
   <div class="sidebar">
-    <a class="active" href="#home">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
   </div>
-
   <nav class="navbar navbar-expand-lg navbar-light bg-light app-header header-shadow">
-    <a class="navbar-brand font-weight-bold text-secondary" href="index.html">Onduty</a>
+    <a class="navbar-brand font-weight-bold text-secondary" href="index.html">
+      <img class="navbar-brand" src="./assets/images/logo.png" height="40" alt="">
+      Onduty</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -56,31 +53,11 @@
           <a class="nav-link text-danger" style="cursor: pointer;" onclick="openNav()"><i class="fa fa-bell"
               aria-hidden="true"></i>&nbsp<strong>Live Alerts</strong></a>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link text-primary" href="map.html"><i class="fas fa-map-marker-alt"></i><i
-              class="fa fa-map-marker" aria-hidden="true"></i>&nbsp<strong>Live Location</strong></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link text-danger" href="fly.html"><i class="fa fa-exclamation-triangle"
-              aria-hidden="true"></i>&nbsp<strong>Alerts</strong></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link text-secondary" href="journey.html"><i class="fa fa-thumb-tack"
-              aria-hidden="true"></i>&nbsp<strong>History</strong></a>
-        </li>
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/police/"><i
-              class="nav-link-icon fa fa-address-card-o">&nbsp</i>Police<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/zone/"><i
-              class="nav-link-icon fa fa-search">&nbsp</i>Zones</a>
-        </li>
-        <li class="nav-item active">
           <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com/admin"><i
-              class="nav-link-icon fa fa-cog"></i>&nbspAdmin Dashboard</a>
+              class="nav-link-icon fa fa-id-card-o"></i>&nbspAdmin Dashboard</a>
         </li>&nbsp;
       </ul>
       <div style="margin-top: 27px;" id="google_translate_element"></div>
@@ -91,7 +68,7 @@
   <div id="mySidebar" class="sidebar">
     <div class="card-header">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-bars"></i></a>
-      <h2 class="font-weight-bold">Alerts</h2>
+      <h2 class="font-weight-bold">Alert Areas</h2>
     </div>
     <div class="alerts">
 
@@ -164,7 +141,6 @@
       new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
     }
   </script>
-
 </body>
 
 </html>
